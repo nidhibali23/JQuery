@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keys</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        .first {
+            margin-top: 12px;
+            border: 1px solid grey;
+            height: 100px;
+            width: 100px;
+        }
+
+        #output {
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center">Key Events</h1>
+
+    Name <input type="text">
+    <div class="first" id="box">
+        Hello World!!!
+
+    </div>
+    <p id="output"></p>
+
+    <script>
+        $(document).ready(function () {
+            $("body").keydown(function () {
+                $(this).css({
+                    "color": "orange",
+                    "background": "pink"
+                })
+            })
+            $("body").keyup(function (e) {
+                $(this).css({
+                    "color": "black",
+                    "background": "cadetblue"
+
+                })
+                $("#output").html("presses key is :" + e.key)
+                $("output").css("font", "30px")
+            })
+        })
+
+    </script>
+
+</body>
+
+</html>

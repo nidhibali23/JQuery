@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        .first {
+            margin-top: 20px;
+            border: 2px solid lightcoral;
+            height: 100px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center">Forms</h1>
+
+    <!-- Focus(), select(), blur(), change(), submit() -->
+    <center>
+        <form id="myform">
+            Name: <input type="text" id="name"><br><br>
+            Course: <input type="text" id="course"><br><br>
+            City:
+            <select id="city">
+                <option selected disabled>Choose</option>
+                <option value="chandigarh">Chandigarh</option>
+                <option value="delhi">Delhi</option>
+                <option value="noida">Noida</option>
+                <option value="panchkula">Panchkula</option>
+            </select><br><br>
+            <input type="submit" value="click">
+            <div id="output"></div>
+        </form>
+    </center>
+
+    <script>
+        $(document).ready(function () {
+            $("#name").focus(function () {
+                $(this).css({
+                    "color": "red",
+                    "background": "yellow",
+                    "border-radius": "10px"
+                })
+            })
+
+            $("#name").blur(function () {
+                $(this).css({
+                    "color": "white",
+                    "background": "black",
+                    "border-radius": "10px",
+                    "height": "30px",
+                    "width": "100px"
+                })
+            })
+
+            $("#name").change(function () {
+                $(this).css({
+                    "color": "white",
+                    "background": "black",
+                    "border-radius": "10px",
+                    "height": "30px",
+                    "width": "100px"
+                })
+                var city = $("#city").val();
+                $("#output").html("Selected Value is :" + city)
+            })
+
+            $("#name").select(function () {
+                $(this).css({
+                    "color": "white",
+                    "background": "black",
+                    "border-radius": "10px",
+                    "height": "30px",
+                    "width": "100px"
+                })
+            })
+
+            $("#myform").submit(function () {
+                $(this).css({
+                    "color": "white",
+                    "background": "black",
+                    "border-radius": "10px",
+                    "height": "30px",
+                    "width": "100px"
+                })
+                alert("form submitted");
+            })
+        })
+
+
+
+
+    </script>
+
+</body>
+
+</html>

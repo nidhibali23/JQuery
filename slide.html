@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        .heading {
+            padding: 10px;
+            background-color: cadetblue;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .panel {
+            display: none;
+            padding: 10px;
+            background-color: rgb(187, 202, 216);
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center">Slide</h1>
+    <div class="heading" id="test">Click on me to slide</div>
+    <div class="panel" id="panel">I am sliding
+        <hr>Slided
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            // This all are different slide click functions.
+
+            $("#test").click(function () {
+                $("#panel").slideDown(5000);
+            })
+
+            $("#test").click(function () {
+                $("#panel").slideToggle(2000);
+            })
+
+            $("#test").click(function () {
+                $("#panel").slideUp(5000);
+            })
+
+            $("#test").click(function () {
+                $("#panel").slideDown("fast");
+            })
+            $("#test").click(function () {
+                $("#panel").slideDown("slow");
+            })
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>

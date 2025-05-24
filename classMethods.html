@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Methods</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        .first {
+            border: 2px solid black;
+            color: pink;
+            background-color: antiquewhite;
+            font-size: 20px;
+            height: 150pxs;
+            width: 150px;
+
+        }
+
+        .second {
+            border: 2px solid cadetblue;
+            color: green;
+            background-color: aqua;
+            font-size: 20px;
+            height: 150pxs;
+            width: 150px;
+        }
+
+        button {
+            margin-top: 20px;
+            margin-right: 10px;
+            font-size: 20px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1 align="center">Class Methods, Hide and Show, fadeIn/fadeOut</h1>
+
+    <!-- add class, remove class, toggle class -->
+
+    <div id="test" class="first">
+        <h3>Netmax Technology</h3>
+        <p>We are learning jquery</p>
+
+    </div>
+
+    <button id="add">Add Class</button>
+    <button id="remove">Remove class</button>
+    <button id="toggle">Toggle class</button>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="togglehs">Toggle Hide/show</button>
+
+    <button id="fadein">Fade In</button>
+    <button id="fadeout">fade Out</button>
+    <button id="toggle">Toggle</button>
+    <button id="fadeto">Fade To</button>
+
+
+    <script>
+        $(document).ready(function () {
+            $("#add").click(function () {
+                $("#test").addClass("first second")
+            })
+
+            $("#remove").click(function () {
+                $("#test").removeClass("second")
+            })
+            $("#toggle").click(function () {
+                $("#test").toggleClass("first second")
+            })
+
+            $("#hide").click(function () {
+                $("#test").hide(2000)
+            })
+            $("#show").click(function () {
+                $("#test").show()
+            })
+            $("#togglehs").click(function () {
+                $("#test").toggleClass()
+            })
+            $("#fadein").click(function () {
+                $("#test").fadeIn()
+            })
+            $("#fadeout").click(function () {
+                $("#test").fadeOut()
+            })
+            $("#fadeto").click(function () {
+                $("#test").fadeTo("slow", "0.5")
+
+            })
+        })
+    </script>
+
+</body>
+
+</html>

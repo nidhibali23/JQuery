@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        .box {
+            border: 2px solid black;
+            height: 150px;
+            width: 150px;
+        }
+
+        .first {
+            color: pink;
+            border: 2px solid cadetblue;
+            height: 250px;
+            width: 250px;
+
+        }
+
+        .output {
+            margin-top: 20px;
+            border: 2px solid hotpink;
+            height: 150px;
+            width: 150px;
+        }
+
+        #btn {
+            font-size: 30px;
+            padding: 12px 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Set Methods of jquery</h1>
+    <ul>
+        <li>html()</li>
+        <li>val()</li>
+        <li>test()</li>
+        <li>attribute()</li>
+    </ul>
+
+    <div id="test">
+        <h3>Netmax Technology</h3>
+        <p>If you want to learn jquery just click the submit button</p>
+
+
+    </div><br>
+
+    Value : <input type="text" id="val" /><br><br>
+
+    <button id="btn">Submit</button><br>
+
+    <script>
+
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                $("h3").html("<i>Hello Students</i>")
+                $("p").html("Welcome to jquery class")
+
+                $("#val").val("name")
+                $("#test").attr("class", "box first")
+            })
+
+        })
+
+    </script>
+
+
+</body>
+
+
+</html>

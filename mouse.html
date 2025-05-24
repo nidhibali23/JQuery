@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse</title>
+    <script src="js/jquery.js"></script>
+    <style>
+        .box {
+            height: 200px;
+            width: 50%;
+            border: 3px solid red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box" id="box">
+        <h3>Hello World!!!</h3>
+    </div>
+
+    <ul>
+        <li>CBSE</li>
+        <li>PSEB</li>
+        <li>ICSE</li>
+        <li>PTU</li>
+        <li>GNDU</li>
+    </ul>
+
+    <!-- Mouse Events
+    1. click
+    2. double Click
+    3. mouseenter
+    4. mouse leave
+    5. contextmenu
+  -->
+    <script>
+        $(document).ready(function () {
+            var isBlue = false;
+
+
+            // $("#box").click(function(){
+            //   if (!isBlue) {
+            //     $("#box").css("background", "blue");
+            //   } else {
+            //     $("#box").css("background", "white");
+            //   }
+            //   isBlue = !isBlue;
+            // });
+
+            $("#box").dblclick(function () {
+                if (!isBlue) {
+                    $("#box").css("background", "blue");
+                    $("#box").css("width", "50%");
+                } else {
+                    $("#box").css("width", "20%");
+                }
+                isBlue = !isBlue;
+            });
+
+            $("#box").mouseenter(function () {
+                $("#box").css("background", "orange");
+            });
+
+            $("#box").mouseleave(function () {
+                $("#box").css("background", "green");
+            });
+
+            $("#box").contextmenu(function () {
+                $("#box").css("background", "red");
+            });
+        });
+    </script>
+
+</body>
+
+</html>

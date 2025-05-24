@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get & Set Methods</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        .box {
+            border: 2px solid black;
+            height: 150px;
+            width: 150px;
+            padding: 10px;
+        }
+
+        .output {
+            margin-top: 20px;
+            border: 2px solid hotpink;
+            height: 150px;
+            width: 150px;
+            overflow: auto;
+            padding: 10px;
+        }
+
+        #btn {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li>html()</li>
+        <li>val()</li>
+        <li>text()</li>
+        <li>attr()</li>
+    </ul>
+
+    <div class="box" id="test">
+        <h3>Netmax Technology</h3>
+        <p>I am learning jQuery</p>
+    </div>
+
+
+
+    <div class="output" id="html"></div>
+    <div class="output" id="text"></div>
+
+
+    <img src="doll.jpg" id="doll" alt="Example Image" width="150" height="100" />
+    <div class="output" id="imageDetails"></div>
+
+    <p>Value: <input type="text" id="val" /></p>
+
+    <button id="btn">Submit</button>
+
+    <script>
+        $(document).ready(function () {
+
+
+            $("#btn").click(function () {
+                var showHtml = $("#test").html();
+                $("#html").html("<strong>html():</strong><br>" + showHtml);
+
+                var showText = $("#test").text();
+                $("#text").html("<strong>text():</strong><br>" + showText);
+
+
+                var imgW = $("#doll").width();
+                var imgH = $("#doll").height();
+
+                $("#imageDetails").html(
+                    `<p><strong>Image Width:</strong> ${imgW}px</p>
+                     <p><strong>Image Height:</strong> ${imgH}px</p>`
+                );
+            });
+
+
+            $("#val").blur(function () {
+                var value = $("#val").val();
+                $("#text").html("<h2>Input Value:</h2><p>" + value + "</p>");
+            });
+        });
+    </script>
+
+</body>
+
+</html>

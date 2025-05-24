@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors</title>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .box {
+            height: 200px;
+            width: 50%;
+            border: 3px solid red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box" id="box">
+        <h3>Hello World!!!</h3>
+    </div>
+
+    <ul>
+        <li>CBSE</li>
+        <li>PSEB</li>
+        <li>ICSE</li>
+        <li>PTU</li>
+        <li>GNDU</li>
+    </ul>
+
+    <ul>
+        <li>Select By id = $("#idName") </li>
+        <li>Select By className = $(".className") </li>
+        <li>Select By TagName/Element = $("tagName") </li>
+    </ul>
+
+    <ul>
+        <li>Select By id = $("#idName") </li>
+        <li>Select By className = $(".className") or $(".class1 , .class2 , .class3") </li>
+        <li>Select By TagName/Element = $("tagName") </li>
+    </ul>
+
+    <h2>Advanced Selectors</h2>
+    <ul>
+        <li>Select all = $("*")</li>
+        <li>Multiple parent child = $("ul li")</li>
+        <li>$("ul:first li:last")</li>
+    </ul>
+
+    <script>
+        $(document).ready(function () {
+            // Set box width correctly with unit
+            $("#box").css("width", "600px");
+
+            // Make 'GNDU' large
+            $("ul:first li:last").css("font-size", "30px");
+        });
+    </script>
+
+</body>
+
+</html>
