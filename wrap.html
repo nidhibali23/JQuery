@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wrap and WrapAll Example</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        .test {
+            color: red;
+            background-color: yellow;
+            font-size: 30px;
+        }
+
+        .group {
+            background-color: aquamarine;
+            color: white;
+            font-size: 20px;
+        }
+
+        .group1 {
+            background-color: blue;
+            color: white;
+            font-size: 20px;
+        }
+
+        .group2 {
+            background-color: aquamarine;
+            color: red;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 align="center">Wrap and wrapAll()</h1>
+
+    <div id="box">
+        <p>Items</p>
+        <p>Items</p>
+        <h2>Good Morning</h2>
+        <p>Items</p>
+        <p>Items</p>
+        <h2>School</h2>
+        <p>Items</p>
+        <p>Items</p>
+        <p>Items</p>
+        <p>Items</p>
+        <p>Items</p>
+    </div>
+
+    <button id="add">Wrap All Paragraphs</button>
+    <button id="add3">Wrap Each Paragraph</button>
+    <button id="wrapH2">Wrap All H2 Tags</button>
+
+    <script>
+        $(document).ready(function () {
+
+            // Wrap all <p> in one div with class 'test'
+            $("#add").click(function () {
+                $("#box p").wrapAll("<div class='test'></div>");
+            });
+
+            // Wrap each <p> individually in divs with class 'group'
+            $("#add3").click(function () {
+                $("#box p").wrap("<div class='group'></div>");
+            });
+
+            // Wrap all <h2> tags together in one div with class 'group1'
+            $("#wrapH2").click(function () {
+                $("#box h2").wrapAll("<div class='group1'></div>");
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

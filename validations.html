@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validations</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            margin-top: 30px;
+        }
+
+        form {
+            width: 350px;
+            margin: 0 auto;
+            padding: 25px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #aaa;
+            margin-bottom: 5px;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .success {
+            color: green;
+            font-size: 16px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 15px;
+            cursor: pointer;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 align="center">Form Validations</h2>
+
+    <form id="myForm">
+        Name
+        <input type="text" required id="name">
+        <div id="nameError" class="error"></div>
+
+        Email
+        <input type="email" required id="email">
+        <div id="emailError" class="error"></div>
+
+        Password
+        <input type="password" required id="pwd">
+        <div id="pwdError" class="error"></div>
+
+        Contact
+        <input type="text" required id="contact" minlength="10">
+        <div id="contactError" class="error"></div>
+
+        <div id="success" class="success"></div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        $(document).ready(function () {
+            $("#myForm").submit(function (e) {
+                e.preventDefault();
+                $(".error").text("");
+                $("#success").text("");
+
+                let name = $("#name").val().trim();
+                let email = $("#email").val().trim();
+                let pwd = $("#pwd").val();
+                let contact = $("#contact").val().trim();
+
+                let isValid = true;
+
+                if (name === "") {
+                    $("#nameError").text("Name is required!!!");
+                    isValid = false;
+                }
+
+                const emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i;
+                if (!email.match(emailPattern)) {
+                    $("#emailError").text("Please enter a valid email!");
+                    isValid = false;
+                }
+
+                if (pwd.length < 6) {
+                    $("#pwdError").text("Password must be at least 6 characters");
+                    isValid = false;
+                }
+
+                if (!/^\d{10}$/.test(contact)) {
+                    $("#contactError").text("Contact must be 10 digits");
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    $("#success").text("Form is submitted successfully");
+                    $("#myForm").trigger("reset");
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

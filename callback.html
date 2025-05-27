@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallBack</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        #para1 {
+            color: red;
+            background-color: blue;
+            font-size: 20px;
+
+        }
+
+        #para2 {
+            color: cadetblue;
+            background-color: black;
+            font-size: 20px;
+
+        }
+
+        #box {
+            position: relative;
+            margin-top: 12px;
+            background-color: brown;
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center">Call Back functions</h1>
+    <div id="para1">i am message 1</div>
+    <div id="para2">i am message 2</div>
+
+
+    <div id="box"></div><br>
+    <button id="start">Start</button>
+    <script>
+        $(document).ready(function () {
+            $("#start").click(function () {
+                $("#para1").fadeOut(4000, function () {
+                    $("#para2").slideToggle(3000, function () {
+                        $("#box").animate({
+                            left: "0px",
+                            width: "100px",
+                            height: "200px",
+                            color: "black"
+                        }, 3000)
+                            .animate({
+                                left: "50px",
+                                width: "200px",
+                                height: "200px",
+                                color: "yellow"
+                            }, 3000)
+                            .animate({
+                                left: "150px",
+                                width: "100px",
+                                height: "100px",
+                                color: "yellow"
+                            }, 3000);
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

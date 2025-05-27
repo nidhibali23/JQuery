@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traverse</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="firstchild">
+            <p class="para">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptatibus iure tempora beatae
+                molestiae asperiores, magni cumque accusamus quo optio.
+            </p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur, repellat. Quis, architecto! Soluta
+                reprehenderit alias consequuntur accusantium quidem. Maiores, amet!</p>
+        </div>
+        <div class="secondchild">
+            <p class="para">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ut ducimus ratione labore vitae in
+                beatae iusto temporibus. In, excepturi!
+            </p>
+            <p>Lorem, ipsum dolor sit amet consectetur<a>HELLO</a> adipisicing elit. Placeat est facere provident
+                dolores iste,
+                voluptate obcaecati repellendus quam rerum amet nulla excepturi, consequuntur dolore esse ea cumque quis
+                laboriosam at ipsum dicta cum quo possimus <span>hello hi</span>laborum. Praesentium assumenda eos
+                ducimus<a>morning</a> ea perferendis
+                neque libero debitis adipisci<a>morning</a> blanditiis nam? Magnam, dolore.
+            </p>
+            <p>Lorem, ipsum dolor<span>Hello</span> sit amet consectetur adipisicing elit. Non<a>Hello hi</a> quo quas
+                accusantium aperiam assumenda et
+                omnis enim eius officia doloribus.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            $(".main").find("p").css("color", "red")
+            $(".main .secondchild").find("a").css("color", "blue")
+            $(".main .secondchild").find("a").css("background-color", "yellow")
+
+            $(".main .secondchild").find(".para").css({
+                "backgroundColor": "yellow",
+                "fontSize": "20px"
+            })
+
+            $(".section .secondchild").find(".para").css({
+                "color": "red",
+                "fontSize": "20px"
+            })
+
+            $(".secondchild").children().css({
+                "color": "red",
+                "fontSize": "20px"
+            })
+            $(".secondchild p").children().css({
+                "color": "green",
+                "fontSize": "20px"
+            })
+            $(".secondchild p a").parent().css({
+                "border": "10px solid pink"
+            })
+            $(".secondchild p span").parent().css({
+                "border": "10px solid green"
+            })
+            $(".secondchild").siblings().css({
+                "border": "10px solid black"
+            })
+            $(".secondchild p").siblings().css({
+                "border": "10px solid brown"
+            })
+            $(".secondchild p span").siblings().css({
+                "border": "10px solid purple"
+            })
+
+
+        })
+    </script>
+
+
+
+</body>
+
+</html>

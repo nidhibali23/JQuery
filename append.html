@@ -7,21 +7,17 @@
     <title>Append</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-
-
 </head>
 
 <body>
 
-    <h1>Append Preopend After or Before</h1>
-
+    <h1>Append Prepend After or Before</h1>
 
     <div class="box" id="first">
-
         <h3>Hello</h3>
-
     </div>
-    <ul>
+
+    <ul id="myList">
         <li>List Item 1</li>
         <li>List Item 2</li>
         <li>List Item 3</li>
@@ -30,27 +26,28 @@
     </ul>
 
     <button id="append">Append</button>
-    <button id="Preopend">Prepend</button>
+    <button id="prepend">Prepend</button>
     <button id="after">After</button>
     <button id="before">Before</button>
 
     <script>
         $(document).ready(function () {
-
             $("#append").click(function () {
-                $("#first").append("<h2>welcome to class<h2>")
-            })
-            $("#aprepend").click(function () {
-                $("#first").prepend("<h5>Netmax Technology<h5>")
-            })
-            $("#after").click(function () {
-                $("#ul li").eq(1).after("<li>Netmax Technology<li>")
-            })
-            $("#before").click(function () {
-                $("#ul li").eq(3).after("<li>Netmax Technology<li>")
-            })
+                $("#first").append("<h2>Welcome to class</h2>");
+            });
 
-        })
+            $("#prepend").click(function () {
+                $("#first").prepend("<h5>Netmax Technology</h5>");
+            });
+
+            $("#after").click(function () {
+                $("#myList li").eq(1).after("<li>Netmax Technology</li>");
+            });
+
+            $("#before").click(function () {
+                $("#myList li").eq(3).before("<li>Netmax Technology</li>");
+            });
+        });
     </script>
 </body>
 
